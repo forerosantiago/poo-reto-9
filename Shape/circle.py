@@ -3,7 +3,7 @@
 import math
 
 from Shape.shape import Shape
-
+from Shape.shape import timeFunction
 
 class Circle(Shape):
     """A circle in a 2D space"""
@@ -22,8 +22,10 @@ class Circle(Shape):
             raise ValueError("Radius must be positive")
         self._radius = value
 
+    @timeFunction
     def compute_area(self):
         return math.pi * self.radius**2
 
+    @timeFunction
     def compute_perimeter(self):
         return 2 * math.pi * self.radius

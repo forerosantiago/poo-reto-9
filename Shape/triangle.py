@@ -1,7 +1,7 @@
 """A module for the Triangle class"""
 
 from Shape.shape import Shape
-
+from shape import timeFunction
 
 class Triangle(Shape):
     """A triangle in a 2D space"""
@@ -42,6 +42,7 @@ class Triangle(Shape):
             raise ValueError("Side must be positive")
         self._side3 = value
 
+    @timeFunction
     def compute_area(self):
         # Compute the area of the triangle using Heron's formula
         semiperimeter = self.compute_perimeter() / 2
@@ -52,5 +53,6 @@ class Triangle(Shape):
             * (semiperimeter - self.side3)
         ) ** 0.5
 
+    @timeFunction
     def compute_perimeter(self):
         return self.side1 + self.side2 + self.side3

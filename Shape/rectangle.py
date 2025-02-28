@@ -1,7 +1,7 @@
 """Rectangle class"""
 
 from Shape.shape import Shape
-
+from Shape.shape import timeFunction
 
 class Rectangle(Shape):
     """A rectangle in a 2D space"""
@@ -31,8 +31,10 @@ class Rectangle(Shape):
             raise ValueError("Height must be positive")
         self._height = value
 
+    @timeFunction
     def compute_area(self) -> float:
         return self.width * self.height
 
+    @timeFunction
     def compute_perimeter(self) -> float:
         return 2 * (self.width + self.height)

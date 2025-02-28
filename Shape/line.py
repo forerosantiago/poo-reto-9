@@ -1,5 +1,6 @@
 """Module defining the Line class"""
 
+from shape import timeFunction
 from point import Point
 
 class Line:
@@ -29,6 +30,7 @@ class Line:
         self.length = self.compute_length()
 
 
+    @timeFunction
     def compute_length(self) -> float:
         """Compute the length of the line"""
         return self.start_point.compute_distance(self.end_point)
