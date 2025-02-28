@@ -8,9 +8,39 @@ class Triangle(Shape):
 
     def __init__(self, side1, side2, side3):
         super().__init__()
-        self.side1 = side1
-        self.side2 = side2
-        self.side3 = side3
+        self._side1 = side1
+        self._side2 = side2
+        self._side3 = side3
+
+    @property
+    def side1(self):
+        return self._side1
+    
+    @side1.setter
+    def side1(self, value):
+        if value <= 0:
+            raise ValueError("Side must be positive")
+        self._side1 = value
+
+    @property
+    def side2(self):
+        return self._side2
+    
+    @side2.setter
+    def side2(self, value):
+        if value <= 0:
+            raise ValueError("Side must be positive")
+        self._side2 = value
+
+    @property
+    def side3(self):
+        return self._side3
+    
+    @side3.setter
+    def side3(self, value):
+        if value <= 0:
+            raise ValueError("Side must be positive")
+        self._side3 = value
 
     def compute_area(self):
         # Compute the area of the triangle using Heron's formula

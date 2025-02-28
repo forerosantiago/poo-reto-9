@@ -10,7 +10,17 @@ class Circle(Shape):
 
     def __init__(self, radius):
         super().__init__()
-        self.radius = radius
+        self._radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+    
+    @radius.setter
+    def radius(self, value):
+        if value <= 0:
+            raise ValueError("Radius must be positive")
+        self._radius = value
 
     def compute_area(self):
         return math.pi * self.radius**2
